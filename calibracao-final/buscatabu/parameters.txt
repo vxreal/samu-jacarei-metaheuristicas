@@ -1,0 +1,2 @@
+# nome     switch        tipo  faixa
+tenure     "tenure="     i     (3, 30)

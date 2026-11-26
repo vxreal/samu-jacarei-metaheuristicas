@@ -1,0 +1,2 @@
+# nome     switch        tipo    faixa
+t0         "t0="         r,log   (1, 10000)

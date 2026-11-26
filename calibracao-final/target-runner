@@ -1,0 +1,26 @@
+#!/bin/bash
+# chamado pelo irace: id_config id_instancia seed instancia parametros...
+seed=$3
+instancia=$4
+shift 4
+
+# limite por execucao
+limite=900
+
+metodo=$(basename "$PWD")
+IFS=- read modelo frota raio <<< "$instancia"
+codigo=$(cd "$(dirname "$0")/.." && pwd)
+
+saida=$(cd "$codigo/$metodo" && timeout $limite ./programa $modelo $frota $raio $seed "$@")
+
+if [ $? -ne 0 ] || [ -z "$saida" ]; then
+  # estourou o limite ou deu erro: conta como a pior solucao possivel
+  echo "estourou o limite: $metodo $instancia $seed $*" >&2
+  echo "0"
+  exit 0
+fi
+
+valor=$(echo "$saida" | cut -d, -f6)
+
+# o irace minimiza e por isso devolve o valor negativo
+echo "-$valor"

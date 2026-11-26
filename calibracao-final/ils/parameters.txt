@@ -1,0 +1,2 @@
+# nome     switch        tipo  faixa
+nivel      "nivel="      i     (1, 6)

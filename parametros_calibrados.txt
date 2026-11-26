@@ -1,0 +1,6 @@
+simulatedannealing t0=1974.3468
+buscatabu tenure=13
+ils nivel=6
+ga elite=0.305 sorteados=0.1792 desastre=10 mortes=0.6718
+grasp alfaini=0.8714
+grasptabu alfaini=0.8526 tenure=10

@@ -1,0 +1,2 @@
+# nome     switch        tipo  faixa
+alfaini    "alfaini="    r     (0.5, 0.95)
